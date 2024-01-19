@@ -51,14 +51,14 @@ h6{
     color:#222f3e;
     margin: 0;
 }
-ul{
+.estrellas{
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 0;
 }
-li{
+.estrella li{
     padding-top: 5px;
 }
 .fa{
