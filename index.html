@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Bombonería</title>
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/style_nav.css">
+    <link rel="stylesheet" href="src/css/style_slide.css">
+    <link rel="stylesheet" href="src/css/style_footer.css">
+    <link rel="stylesheet" href="src/css/style_productos.css">
+    <link rel="icon" href="src/img/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -23,14 +27,113 @@
         </nav>
         <a href="" class="contacto"><button>Contáctanos</button></a>
     </header>
-
-
+    
+    <br>
+    <hr>
     <!-- CONTAINER -->
     <div class="container">
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quae ipsum veniam nisi ipsam itaque recusandae nemo voluptatibus odit asperiores. Ut obcaecati consectetur deleniti quibusdam accusamus explicabo amet voluptates quaerat!</p>
+        <div class="img-slider">
+            <div class="slide active">
+                <img src="src/img/bombon1.jpg" alt="">
+                <div class="info">
+                    <h2>Imagen 01</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="src/img/bombon2.jpg" alt="">
+                <div class="info">
+                    <h2>Imagen 02</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="src/img/bombon3.jpg" alt="">
+                <div class="info">
+                    <h2>Imagen 03</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                </div>
+            </div>
+            <div class="boton">
+                <div class="btn active"></div>
+                <div class="btn"></div>
+                <div class="btn"></div>
+            </div>
+        </div>
     </div>
 
 
+    <br>
+    <hr>
+    <!-- CARDS -->
+    <div class="galeria">
+
+        
+        <div class="contenido">
+            <img src="src/img/bomboncito1.png" class="card" alt="">
+            <h3>Bomboncito</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda beatae ratione repudiandae a repellat fugit! Cupiditate, illum corporis tempora aliquam quos vero.</p>
+            <h6>12.50€</h6>
+            <ul>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star half"></li>
+            </ul>
+            <button class="comprar">Comprar</button>
+        </div>
+
+        <div class="contenido">
+            <img src="src/img/bomboncito1.png" class="card" alt="">
+            <h3>Bomboncito</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda beatae ratione repudiandae a repellat fugit! Cupiditate, illum corporis tempora aliquam quos vero.</p>
+            <h6>12.50€</h6>
+            <ul>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star"></li>
+            </ul>
+            <button class="comprar">Comprar</button>
+        </div>
+
+        <div class="contenido">
+            <img src="src/img/bomboncito1.png" class="card" alt="">
+            <h3>Bomboncito</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda beatae ratione repudiandae a repellat fugit! Cupiditate, illum corporis tempora aliquam quos vero.</p>
+            <h6>12.50€</h6>
+            <ul>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star checked"></li>
+            </ul>
+            <button class="comprar">Comprar</button>
+        </div>
+
+        <div class="contenido">
+            <img src="src/img/bomboncito1.png" class="card" alt="">
+            <h3>Bomboncito</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda beatae ratione repudiandae a repellat fugit! Cupiditate, illum corporis tempora aliquam quos vero.</p>
+            <h6>12.50€</h6>
+            <ul>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star checked"></li>
+                <li class="fa fa-star checked half"></li>
+            </ul>
+            <button class="comprar">Comprar</button>
+        </div>
+
+
+    </div>
+
+    <br>
+    <hr>
     <!-- Footer -->
     <footer class="footer">
         <div class="pie">
@@ -76,5 +179,35 @@
         </div>
     </footer>
 
+
+    <!-- SCRIPT -->
+    <script type="text/javascript">
+        var slides = document.querySelectorAll('.slide');
+        var btns = document.querySelectorAll('.btn');
+        let currentSlide = 1;
+
+        //JS para el movimiento manual de navegación
+        var manualNav = function(manual){
+            slides.forEach((slide) => {
+                slide.classList.remove('active');
+
+                btns.forEach((btn) => {
+                    btn.classList.remove('active');
+                });
+            });
+
+            slides[manual].classList.add('active');
+            btns[manual].classList.add('active');
+        }
+
+        btns.forEach((btn,i) => {
+            btn.addEventListener("click", () => {
+                manualNav(i);
+                currentSlide = i;
+            });
+        });
+
+        //JavaScript para movimiento automático
+    </script>
 </body>
 </html>
